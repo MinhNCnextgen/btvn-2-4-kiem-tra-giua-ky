@@ -19,33 +19,14 @@ int main(){
         int x,y;
         cin>>x>>y;
         int sum=0;
-        if (x+1<m && y+1<n){
-            sum+=arr[x+1][y+1];
-        }
-        if (x+1<m && y-1<n){
-            sum+=arr[x+1][y-1];
-        }
-        if (x-1<m && y+1<n){
-            sum+=arr[x-1][y+1];
-        }
-        if (x-1<m && y-1<n){
-            sum+=arr[x-1][y-1];
-        }
-        if (x<m && y+1<n){
-            sum+=arr[x][y+1];
-        }
-        if (x+1<m && y<n){
-            sum+=arr[x+1][y];
-        }
-        if (x<m && y-1<n){
-            sum+=arr[x][y-1];
-        }
-        if (x-1<m && y<n){
-            sum+=arr[x-1][y];
-        }
-        if (x<m && y+1<n){
-            sum+=arr[x][y+1];
-        }
+        if (x+1 < m && y+1 < n) sum += arr[x+1][y+1];
+        if (x+1 < m && y-1 >= 0) sum += arr[x+1][y-1];
+        if (x-1 >= 0 && y+1 < n) sum += arr[x-1][y+1];
+        if (x-1 >= 0 && y-1 >= 0) sum += arr[x-1][y-1];
+        if (x < m && y+1 < n) sum += arr[x][y+1];
+        if (x+1 < m && y < n) sum += arr[x+1][y];
+        if (x < m && y-1 >= 0) sum += arr[x][y-1];
+        if (x-1 >= 0 && y < n) sum += arr[x-1][y];
         res[i] = sum;
     }
     for(int i=0;i<q;i++) cout<<res[i]<<endl;
